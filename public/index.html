@@ -112,8 +112,15 @@
     </div>
 </nav>
 <!--START OF CARDS-->
+
 <!--JQUERY DOES THE MAGIC OF FILLING CARDS IN-->
+
+
+
 <div id="append-me" class="row ml-4 mt-5"></div>
+
+
+
 <!--END OF CARDS-->
 <div id="create-button-modal-inner" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div id="create-modal-inner-dialog" class="modal-dialog modal-dialog-centered" role="document">
@@ -304,7 +311,44 @@
 
 
 </div>
+<script>
+  const refreshMovies = () => {
+        $('#append-me').html(`<h1 id="loading-h1">Loading...</h1>`);
+        return fetch('/api/movies')
+            .then(response => response.json())
+            .then((movies) => {
+                $('#loading-h1').remove();
+                movies.forEach(({Title, Overview, Year, Rated, Genre, Image, Website, imdbRating, Rating, id}) => {
+                    $('#append-me').append(`<div class="col-md-4 col-lg-4 mt-2 mb-2 cust-col"><div id="card-${id}" class="card cust-card"><img id="img-${id}" class="img-thumbnail" src="${Image}" alt="Card image cap"><div class="card-body"><h5 id="movie-title-${id}" class="card-title">${Title}</h5><p id="movie-overview-${id}" class="card-text">${Overview}</p></div><ul id="attributes-ul-${id}" class="list-group list-group-flush"><li class="list-group-item">Your Rating: ${Rating}</li><li class="list-group-item">Year: ${Year}</li><li class="list-group-item">Genre: ${Genre}</li><li class="list-group-item">MPAA Rating: ${Rated}</li><li class="list-group-item">Website: ${Website}</li><li class="list-group-item">IMDb&#174; Rating: ${imdbRating}</li><li class="list-group-item">CRUDy-Movies ID: ${id}</li></ul><div class="card-body"><button onclick="deleteEntry(${id})" id="card-${id}-delete-button" type="button" class="btn btn-danger card-delete-button ml-4 mr-4" data-dismiss="modal" data-toggle="modal" data-target="#delete-modal">Delete Entry</button><button id="card-${id}-edit-button" type="button" class="btn btn-success card-update-button ml-4" data-dismiss="modal" data-toggle="modal" data-target="#update-modal">Update Entry</button></div></div></div>`)
+                });
+            })
+    }
 
+
+
+
+
+
+    const deleteEntry =   (dbID) => {
+        return fetch(`/api/movies/${dbID}`, {
+            "method": "DELETE"
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then(response => {
+                refreshMovies();
+
+                return response;
+            })
+            .then((response) => {
+                console.log(response);
+            });
+
+    }
+
+
+</script>
 <script src="./main.js"></script>
 </body>
 </html>

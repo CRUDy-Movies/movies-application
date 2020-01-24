@@ -99,6 +99,9 @@ $('#read-data-button').click(function() {
     $('#read-genre-input').val('');
     $('#read-id-input').val('');
 });
+
+
+
 $('#custom-create-submit-button').click(function() {
     if (!$('#create-movie-title-input-inner').val()) {
         alert('Please input a movie title.');
@@ -140,9 +143,57 @@ $('#custom-create-submit-button').click(function() {
         .then(response => refreshMovies());
 });
 
+$('.card-delete-button').click(function() {
+console.log("you have success");
+    let cardId = $(this).attr('id');
+
+    cardId = cardId.split('-');
+
+    cardId = cardId[1];
+
+    console.log(cardId);
+
+    if (!$('#create-movie-title-input-inner').val()) {
+        alert('Please input a movie title.');
+        return;
+    }
+    if (!$('#overview-input').val()) {
+        alert('Please input a brief overview of the movie.');
+        return;
+    }
+    if (!$('#genre-input').val()) {
+        alert('Please input a genre.');
+        return;
+    }
+    if (!$('#rating-select').val()) {
+        alert('Please select a rating.');
+        return;
+    }
+    let inputObj = {
+        Title: $('#create-movie-title-input-inner').val(),
+        Overview: $('#overview-input').val(),
+        Year: $('#year-input').val(),
+        Rated: $('#mpaa-rating-input').val(),
+        Genre: $('#genre-input').val(),
+        Image: $('#img-url-input').val(),
+        Website: $('#overview-input').val(),
+        imdbRating: $('#imdb-rating-input').val(),
+        Rating: $('#rating-select').val()
+    }
+    $('#create-movie-title-input-inner').val('');
+    $('#overview-input').val('');
+    $('#year-input').val('');
+    $('#mpaa-rating-input').val('');
+    $('#genre-input').val('');
+    $('#img-url-input').val('');
+    $('#overview-input').val('');
+    $('#imdb-rating-input').val('');
+    $('#rating-select').val('');
+    updateEntry(inputObj, inputID)
+        .then(response => refreshMovies());
 
 
-
+});
 
 
 

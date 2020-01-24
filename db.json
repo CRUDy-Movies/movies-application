@@ -1,30 +1,6 @@
 {
   "movies": [
     {
-      "Title": "Star Wars: Episode III - Revenge of the Sith",
-      "Overview": "Three years into the Clone Wars, the Jedi rescue Palpatine from Count Dooku. As Obi-Wan pursues a new threat, Anakin acts as a double agent between the Jedi Council and Palpatine and is lured into a sinister plan to rule the galaxy.",
-      "Year": "2005",
-      "Rated": "PG-13",
-      "Genre": "Action, Adventure, Fantasy, Sci-Fi",
-      "Image": "https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg",
-      "Website": "N/A",
-      "imdbRating": "7.5",
-      "Rating": "5",
-      "id": 1
-    },
-    {
-      "Title": "Star Wars: Episode IV - A New Hope",
-      "Overview": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.",
-      "Year": "1977",
-      "Rated": "PG",
-      "Genre": "Action, Adventure, Fantasy, Sci-Fi",
-      "Image": "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
-      "Website": "N/A",
-      "imdbRating": "8.6",
-      "Rating": "4",
-      "id": 2
-    },
-    {
       "Title": "The Lord of the Rings: The Fellowship of the Ring",
       "Overview": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
       "Year": "2001",
@@ -58,30 +34,6 @@
       "imdbRating": "6.9",
       "Rating": "4",
       "id": 5
-    },
-    {
-      "Title": "Star Trek: First Contact",
-      "Overview": "The Borg travel back in time intent on preventing Earth's first contact with an alien species. Captain Picard and his crew pursue them to ensure that Zefram Cochrane makes his maiden flight reaching warp speed.",
-      "Year": "1996",
-      "Rated": "PG-13",
-      "Genre": "Action, Adventure, Drama, Sci-Fi, Thriller",
-      "Image": "https://m.media-amazon.com/images/M/MV5BYTllZjRkY2QtYTJlMy00ZTMxLWE0YWQtMWMwYzY2YTM3YzRjXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
-      "Website": "N/A",
-      "imdbRating": "7.6",
-      "Rating": "1",
-      "id": 6
-    },
-    {
-      "Title": "Austin Powers: International Man of Mystery",
-      "Overview": "A 1960s secret agent is brought out of cryofreeze to oppose his greatest enemy in the 1990s, where his social attitudes are glaringly out of place.",
-      "Year": "1997",
-      "Rated": "PG-13",
-      "Genre": "Adventure, Comedy",
-      "Image": "https://m.media-amazon.com/images/M/MV5BMTRhZTY0MDItY2I1Yi00MGE3LTk1ZDEtMjA0ZGZhNDQyNGU0XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
-      "Website": "N/A",
-      "imdbRating": "7.0",
-      "Rating": "4",
-      "id": 8
     }
   ]
 }

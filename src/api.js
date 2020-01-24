@@ -8,7 +8,7 @@ module.exports = {
             .then((movies) => {
                 $('#loading-h1').remove();
                 movies.forEach(({Title, Overview, Year, Rated, Genre, Image, Website, imdbRating, Rating, id}) => {
-                    $('#append-me').append(`<div class="col-md-4 col-lg-4 mt-2 mb-2 cust-col"><div id="card-${id}" class="card cust-card"><img id="img-${id}" class="img-thumbnail" src="${Image}" alt="Card image cap"><div class="card-body"><h5 id="movie-title-${id}" class="card-title">${Title}</h5><p id="movie-overview-${id}" class="card-text">${Overview}</p></div><ul id="attributes-ul-${id}" class="list-group list-group-flush"><li class="list-group-item">Your Rating: ${Rating}</li><li class="list-group-item">Year: ${Year}</li><li class="list-group-item">Genre: ${Genre}</li><li class="list-group-item">MPAA Rating: ${Rated}</li><li class="list-group-item">Website: ${Website}</li><li class="list-group-item">IMDb&#174; Rating: ${imdbRating}</li><li class="list-group-item">CRUDy-Movies ID: ${id}</li></ul><div class="card-body"><button id="card-{id}-delete-button" type="button" class="btn btn-danger card-delete-button ml-4 mr-4" data-dismiss="modal" data-toggle="modal" data-target="#create-button-modal-inner">Delete Entry</button><button id="card-${id}-edit-button" type="button" class="btn btn-success card-update-button ml-4" data-dismiss="modal" data-toggle="modal" data-target="#create-button-modal-inner">Update Entry</button></div></div></div>`)
+                    $('#append-me').append(`<div class="col-md-4 col-lg-4 mt-2 mb-2 cust-col"><div id="card-${id}" class="card cust-card"><img id="img-${id}" class="img-thumbnail" src="${Image}" alt="Card image cap"><div class="card-body"><h5 id="movie-title-${id}" class="card-title">${Title}</h5><p id="movie-overview-${id}" class="card-text">${Overview}</p></div><ul id="attributes-ul-${id}" class="list-group list-group-flush"><li class="list-group-item">Your Rating: ${Rating}</li><li class="list-group-item">Year: ${Year}</li><li class="list-group-item">Genre: ${Genre}</li><li class="list-group-item">MPAA Rating: ${Rated}</li><li class="list-group-item">Website: ${Website}</li><li class="list-group-item">IMDb&#174; Rating: ${imdbRating}</li><li class="list-group-item">CRUDy-Movies ID: ${id}</li></ul><div class="card-body"><button onclick="deleteEntry(${id})" id="card-${id}-delete-button" type="button" class="btn btn-danger card-delete-button ml-4 mr-4" data-dismiss="modal" data-toggle="modal" data-target="#delete-modal">Delete Entry</button><button id="card-${id}-edit-button" type="button" class="btn btn-success card-update-button ml-4" data-dismiss="modal" data-toggle="modal" data-target="#update-modal">Update Entry</button></div></div></div>`)
                 });
             })
     },
@@ -214,6 +214,10 @@ module.exports = {
         })
             .then((response) => {
                 return response.json();
+            })
+            .then(response => {
+                refreshMovies();
+                return response;
             })
             .then((response) => {
                 console.log(response);
