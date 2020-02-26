@@ -1,5 +1,5 @@
-// functions made but not used. saved just in case. will delete once final status is achieved
-
+// // functions made but not used. saved just in case. will delete once final status is achieved
+//
 // const {OMDB_API_KEY} = require('./keys.js');
 // const {THE_MOVIE_DB_API_KEY} = require('./keys.js');
 // getMovies: () => {

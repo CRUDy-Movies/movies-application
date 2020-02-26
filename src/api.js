@@ -1,5 +1,5 @@
 
-const {RAPID_API_MOVIE_DB_API_KEY} = require('./keys');
+const {OMDB_API_KEY} = require('./keys');
 module.exports = {
     refreshMovies: () => {
         $('#append-me').html(`<h1 id="loading-h1">Loading...</h1>`);
@@ -42,11 +42,11 @@ module.exports = {
         } else if (inputMovieTitle.split(" ").length === 1) {
             searchParams = inputMovieTitle;
         }
-        return fetch(`https://movie-database-imdb-alternative.p.rapidapi.com/?page=1&r=json&s=${searchParams}`, {
+        return fetch(`http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${searchParams}`, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
-                "x-rapidapi-key": RAPID_API_MOVIE_DB_API_KEY
+                "x-rapidapi-key": OMDB_API_KEY
             }
         })
             .then(response => response.json())
@@ -67,11 +67,11 @@ module.exports = {
     },
     idSearchRapidApiMovieDB: (movieID) => {
         "https://movie-database-imdb-alternative.p.rapidapi.com/?i=tt4154796&r=json"
-        return fetch(`https://movie-database-imdb-alternative.p.rapidapi.com/?i=${movieID}&r=json`, {
+        return fetch(`\`http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${movieID}&r=json`, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "movie-database-imdb-alternative.p.rapidapi.com",
-                "x-rapidapi-key": RAPID_API_MOVIE_DB_API_KEY
+                "x-rapidapi-key": OMDB_API_KEY
             }
         })
             .then(response => response.json())
